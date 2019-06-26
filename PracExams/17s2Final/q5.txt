@@ -1,0 +1,29 @@
+Q5 COMP1521 17s2 Final Exam
+
+A.
+
+i)    00000000
+
+ii)   11111101
+
+iii)  11111111
+
+iv)   00000000
+
+v)    10111101
+
+vi)   11000000
+
+vii)  00000000
+
+viii) 11110000
+
+B.
+
+i)    open(pathname, O_RDWR | O_APPEND)
+
+ii)   open(pathname, O_WRONLY | O_CREAT)
+
+iii)  open(pathname, O_WRONLY | O_TRUNC | O_CREAT)
+
+iv)   open(pathname, O_WRONLY)

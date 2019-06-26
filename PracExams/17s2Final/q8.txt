@@ -1,0 +1,34 @@
+Q8 COMP1521 17s2 Final Exam
+
+A.
+
+Both #includes signal to the compilar that we want to include the specified libraries/files into our program. "#include <stdlib.h>" tells the compiler to include the library header file with all the prototypes of the functions defined in the library. "#include "mylib.h"" tells to compiler to include the header file which contains the protypes of the functions that we have written ourselves. in both cases the compiler includes a copy of these header files at the top of our code.
+
+
+B.
+
+If ../../../week05 contains only valid directories:
+/home/jas/cs1521/assignments/ass2/code/../../../week05
+If any are invalid:
+/home/jas/cs1521/assignments/ass2/code/
+(i.e. no change)
+
+C.
+
+i)
+execute  (or search  for directories)
+
+ii)
+read and execute (or search for directories)
+
+iii)
+read, write and execute (or search for directories)
+
+i)
+can "cd" into the directory, but not "ls", cannot create/remove files
+
+ii)
+can "cd" into the directory, can run "ls", cannot create/remove files
+
+iii)
+can "cd" into the directory, can run "ls", can create/remove files

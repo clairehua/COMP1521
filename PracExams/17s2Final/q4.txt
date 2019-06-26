@@ -1,0 +1,27 @@
+Q4 COMP1521 17s2 Final Exam
+
+A.
+
+i)   42
+
+ii)  -5
+
+iii) &
+
+iv)  126
+
+v)   10
+
+vi)  -1.25
+
+B.
+
+i)   68
+
+ii)  60
+
+C.
+
+8
+# it's the size of the largest component
+# all components share the same piece of memory

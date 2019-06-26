@@ -1,0 +1,40 @@
+Q6 COMP1921 17s2 Final Exam
+
+A.
+
+sizeof(Node) = 2 bytes (32 bit machine)
+	Since 32 bit machines have 4 byte pointers
+sizeof(Node) = 3 bytes (64 bit machine)
+	Since 64 bit machines have 8 byte pointers
+	
+	8 bytes assuming ints and pointers are 4 bytes each
+B.
+
+It will return NULL if there is an error, e.g. not enough memory left. It will also return NULL if malloc was successfully called with a size of 0.
+
+heap fills up (collides with stack), or
+heap is corrupted from earlier misuse of pointers
+
+C.
+
+Node *L; // is set to list shown on diagram
+
+// code to convert Before into After:
+
+Node *new = malloc(sizeof(Node));
+new->value = 4;
+new->next = L;
+
+L = new;
+
+
+D.
+
+void freeNodes(Node *L)
+{
+	Node *next = L->next;
+	free(L);
+	if (next != NULL) {
+		freeNodes(next);
+	}
+}

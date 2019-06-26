@@ -1,0 +1,29 @@
+Q7 COMP1521 17s2 Final Exam
+
+A.
+
+i)    0x3FFF
+
+ii)   0xA710
+
+iii)  Page Fault
+
+iv)   0x002A
+ANSWER:
+i)    0x3FFF  ... in frame 1 at offset 0x1FFF
+
+ii)   0xA710  ... in frame 5 at offset 0x0710
+
+iii)  page fault, Code2 not in physical memory
+
+iv)   0x002A  ... in frame 0 at offset 0x002A
+
+B.
+
+i)    8 page table entries
+
+ii)   5
+
+iii)  Data0
+		The pages are open in the first available spot so it's likely that Data0 was opened first so under FIFO (first in first out) it would be replaced next.
+

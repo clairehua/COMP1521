@@ -1,0 +1,6 @@
+Your Output                        Expected Output                    
+
+a1 = 2,4,6,8,10			   Loaded: /home/class/lib/exceptions
+a1 = 2,4,6,8,10			   a1 = 2,4,6,8,10
+a2 = 2,4,6,8,10			   a1 = 2,4,6,8,10
+				   a2 = 2,4,6,8,10

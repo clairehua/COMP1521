@@ -1,0 +1,103 @@
+# COMP1521 17s2 Final Exam
+# void colSum(m, N, a)
+
+   .text
+   .globl colSum
+
+# params: m=$a0, N=$a1, a=$a2
+colSum:
+# prologue
+   addi $sp, $sp, -4
+   sw   $fp, ($sp)
+   la   $fp, ($sp)
+   addi $sp, $sp, -4
+   sw   $ra, ($sp)
+   addi $sp, $sp, -4
+   sw   $s0, ($sp)
+   addi $sp, $sp, -4
+   sw   $s1, ($sp)
+   addi $sp, $sp, -4
+   sw   $s2, ($sp)
+   addi $sp, $sp, -4
+   sw   $s3, ($sp)
+   addi $sp, $sp, -4
+   sw   $s4, ($sp)
+   addi $sp, $sp, -4
+   sw   $s5, ($sp)
+   # if you need to save more than six $s? registers
+   # add extra code here to save them on the stack
+
+# suggestion for local variables (based on C code):
+# m=#s0, N=$s1, a=$s2, row=$s3, col=$s4, sum=$s5
+
+   # add code for your colSum function here
+   
+   li   $s4, 0 	       		# col = 0
+   move $s0, $a0	        # m
+   move $s1, $a1	        # N
+   move $s2, $a2	        # a
+
+colFor:
+   bge  $s4, $s1, endColFor
+   nop
+   
+   li   $s3, 0              # row = 0
+   li   $s5, 0              # sum = 0
+
+rowFor: 
+   bge  $s3, $s1, endRowFor
+   nop
+   
+   la   $t0, ($s0)          # address of m
+   li   $t4, 4   			# sizeof(int)
+   mul  $t1, $s3, $s1		# row * N
+   mul  $t1, $t1, $t4       # *4
+   mul  $t3, $t4, $s4		# col * 4
+   addu $t1, $t1, $t3       # offset = row*N*4 + col*4
+   addu $t0, $t0, $t1		# m[row][col]
+   
+   lw   $t2, ($t0)
+   
+   add  $s5, $s5, $t2       # sum += m[row][col];
+   
+   addi $s3, $s3, 1         # row++
+   
+   j rowFor
+   nop   
+   
+endRowFor:  
+   la    $t3, ($s2)         # address of a[]
+   mul   $t5, $t4, $s4      # offset = col * 4
+   addu  $t3, $t3, $t5
+   
+   lw    $s5, ($t3)			# a[col] = sum 
+   
+continueColFor:
+   addi  $s4, $s4, 1        # col++
+   
+   j colFor
+   nop
+
+endColFor:
+
+# epilogue
+   # if you saved more than six $s? registers
+   # add extra code here to restore them
+   lw   $s5, ($sp)
+   addi $sp, $sp, 4
+   lw   $s4, ($sp)
+   addi $sp, $sp, 4
+   lw   $s3, ($sp)
+   addi $sp, $sp, 4
+   lw   $s2, ($sp)
+   addi $sp, $sp, 4
+   lw   $s1, ($sp)
+   addi $sp, $sp, 4
+   lw   $s0, ($sp)
+   addi $sp, $sp, 4
+   lw   $ra, ($sp)
+   addi $sp, $sp, 4
+   lw   $fp, ($sp)
+   addi $sp, $sp, 4
+   j    $ra
+

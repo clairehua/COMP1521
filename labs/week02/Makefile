@@ -1,0 +1,18 @@
+# COMP1521 18s1 Lab02 Makefile
+
+CC=gcc
+CFLAGS=-Wall -Werror
+
+add : add.o BigNum.o
+	$(CC) -o add add.o BigNum.o
+
+add.o : add.c BigNum.h
+BigNum.o : BigNum.c BigNum.h
+
+bits : bits.c
+
+clean :
+	rm -f core bits add add.o BigNum.o subtract subtract.o 
+
+subtract : subtract.o BigNum.o
+	$(CC) -o subtract subtract.o BigNum.o
